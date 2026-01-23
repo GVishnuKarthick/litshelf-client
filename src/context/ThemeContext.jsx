@@ -20,9 +20,12 @@ export function ThemeProvider({ children }) {
 
     // Add the correct one
     if (isDark) {
+      html.classList.remove('light');
       html.classList.add('dark');
+      
       console.log('[Theme] Added dark class →', html.classList.toString());
     } else {
+      html.classList.remove('dark');
       html.classList.add('light'); // optional - some people add 'light' too
       console.log('[Theme] Removed dark class →', html.classList.toString());
     }

@@ -141,7 +141,7 @@ const BookDetailPage = () => {
                           err.response.data?.detail ||
                           err.response.data?.error;
 
-        if (status === 401) errorMessage = 'Session expired – please log in again';
+        if (status === 401) localStorage.removeItem('token');
         else if (status === 400) errorMessage = serverMsg || 'Invalid book or list selection';
         else if (status === 404) errorMessage = serverMsg || 'List or book not found';
         else if (status === 500) errorMessage = serverMsg || 'Server error – check backend logs';

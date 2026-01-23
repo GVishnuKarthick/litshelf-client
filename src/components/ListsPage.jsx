@@ -37,7 +37,7 @@ const ListsPage = ({ onBookClick }) => {
     } catch (err) {
       console.error('Error fetching lists:', err);
       let msg = 'Failed to load your reading lists';
-      if (err.response?.status === 401) msg = 'Session expired – please log in again';
+      if (err.response?.status === 401)  localStorage.removeItem('token');
       else if (err.response?.status === 500) msg = 'Server error – please try again later';
       else if (err.response?.data?.Message) msg = err.response.data.Message;
       setError(msg);
@@ -78,7 +78,7 @@ const ListsPage = ({ onBookClick }) => {
     } catch (err) {
       console.error('Error creating list:', err);
       let msg = 'Failed to create list';
-      if (err.response?.status === 401) msg = 'Session expired – please log in again';
+      if (err.response?.status === 401) localStorage.removeItem('token');
       else if (err.response?.data?.Message) msg = err.response.data.Message;
       setError(msg);
     }
@@ -104,7 +104,7 @@ const ListsPage = ({ onBookClick }) => {
     } catch (err) {
       console.error('Delete failed:', err);
       let msg = 'Failed to delete list';
-      if (err.response?.status === 401) msg = 'Session expired';
+      if (err.response?.status === 401)  localStorage.removeItem('token');
       else if (err.response?.data?.Message) msg = err.response.data.Message;
       setError(msg);
     }
@@ -178,7 +178,7 @@ const ListsPage = ({ onBookClick }) => {
     } catch (err) {
       console.error('Delete selected failed:', err);
       let msg = 'Failed to delete selected books';
-      if (err.response?.status === 401) msg = 'Session expired';
+      if (err.response?.status === 401)  localStorage.removeItem('token');
       else if (err.response?.data?.Message) msg = err.response.data.Message;
       setError(msg);
     }

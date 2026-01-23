@@ -1,12 +1,12 @@
 // src/components/Header.jsx
 import React, { useState, useEffect } from 'react';
-import { Moon, Sun, Menu, BookOpen, LogOut, User } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';   // ← make sure path is correct
+import { Menu, BookOpen, LogOut, User } from 'lucide-react'; // removed Moon, Sun
 import { useNavigate } from 'react-router-dom';
+// import { useTheme } from '../context/ThemeContext';  // ← comment this out too if no longer needed
 
 const Header = ({ onMenuClick }) => {
-  const { isDark, toggleTheme } = useTheme();    // ← now using toggleTheme
   const navigate = useNavigate();
+  // const { isDark, toggleTheme } = useTheme();   // ← commented out
 
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [userName, setUserName] = useState('Reader');
@@ -70,7 +70,8 @@ const Header = ({ onMenuClick }) => {
           </div>
 
           <div className="flex items-center gap-4">
-            {/* Theme toggle button */}
+            {/* Theme toggle button - commented out */}
+            {/* 
             <button
               onClick={toggleTheme}
               className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
@@ -82,6 +83,7 @@ const Header = ({ onMenuClick }) => {
                 <Moon className="w-5 h-5" />
               )}
             </button>
+            */}
 
             <div className="relative">
               <button
@@ -132,4 +134,4 @@ const Header = ({ onMenuClick }) => {
   );
 };
 
-export default Header;
+export default Header
