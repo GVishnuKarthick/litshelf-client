@@ -81,7 +81,7 @@ const HomePage = ({ onBookClick }) => {
       {/* Hero Section */}
       <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-500 p-8 text-white">
         <div className="relative z-10 text-center">
-          <h2 className="text-3xl font-bold mb-2">Discover Your Next Read! 📚</h2>
+          <h2 className="text-3xl font-bold mb-2">Discover Your Next Read!</h2>
           <p className="text-emerald-50 mb-6">Explore books from different categories and languages</p>
         </div>
       </div>
