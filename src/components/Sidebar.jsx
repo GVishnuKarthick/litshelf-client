@@ -23,19 +23,12 @@ const Sidebar = ({ isOpen, onClose }) => {
         />
       )}
 
-<aside className={`
-  fixed lg:fixed
-  top-16
-  left-0
-  h-[calc(100vh-4rem)]
-  w-64
-  bg-white dark:bg-gray-950
-  border-r border-gray-200 dark:border-gray-800
-  transition-transform duration-300
-  z-30
-  overflow-y-auto
-  ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
-`}>
+      <aside className={`
+        fixed lg:sticky top-16 lg:top-16 left-0 h-[calc(100vh-4rem)] lg:h-screen
+        w-64 bg-white dark:bg-gray-950 border-r border-gray-200 dark:border-gray-800
+        transition-transform duration-300 z-50 overflow-y-auto
+        ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
+      `}>
         <div className="flex flex-col h-full px-4 py-6">
           {/* Close button - mobile only */}
           <button
